@@ -37,7 +37,7 @@ gulp.task 'publish', ->
     """
       git checkout master &&
       git checkout source -- dist &&
-      mv dist/.[!.]* . &&
+      rsync -a -v ./dist ./ &&
       rm -rf dist &&
       git add -A &&
       git commit -m 'auto publishing' &&
