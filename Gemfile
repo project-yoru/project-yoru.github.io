@@ -2,3 +2,4 @@
 source 'https://ruby.taobao.org'
 
 gem 'haml'
+gem 'sass'
