@@ -39,7 +39,7 @@ gulp.task 'publish', ->
     .pipe gulp.dest './'
   # 4. commit and push
   $.git.exec {args: 'add -A'}, (err) -> throw err if err
-  $.git.commit 'auto publishing', (err) -> throw err if err
+  $.git.exec {args: 'commit -m "auto publishing"', (err) -> throw err if err
   $.git.push 'origin', 'master', (err) -> throw err if err
 
 gulp.task 'default', ->
