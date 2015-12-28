@@ -16,6 +16,7 @@
     "gulp-haml": "^0.1.6",
     "gulp-load-plugins": "^1.1.0",
     "gulp-ruby-haml": "0.0.7",
+    "gulp-run": "^1.6.12",
     "gutil": "^1.6.4",
     "run-sequence": "^1.1.5"
   }

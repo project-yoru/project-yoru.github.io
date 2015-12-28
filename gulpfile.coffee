@@ -30,17 +30,22 @@ gulp.task 'build', (cb) ->
 gulp.task 'publish', ->
   # 0. manually checkout and push at `source` branch
   # 1. checkout to master
-  $.git.checkout 'master', (err) -> throw err if err
   # 2. fetch dist from `source`
-  $.git.exec {args: 'checkout source -- dist'}, (err) -> throw err if err
   # 3. mv files
-  gulp
-    .src './dist/**/*'
-    .pipe gulp.dest './'
   # 4. commit and push
-  $.git.exec {args: 'add -A'}, (err) -> throw err if err
-  $.git.exec {args: 'commit -m "auto publishing"'}, (err) -> throw err if err
-  $.git.push 'origin', 'master', (err) -> throw err if err
+  commands =
+    """
+      git checkout master &&
+      git checkout source -- dist &&
+      mv dist/.[!.]* . &&
+      rm -rf dist &&
+      git add -A &&
+      git commit -m 'auto publishing' &&
+      git push origin master
+    """
+  $.run(commands)
+    .exec()
+    .pipe gulp.dest 'output'
 
 gulp.task 'default', ->
   run_sequence(
