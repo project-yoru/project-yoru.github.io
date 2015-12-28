@@ -41,7 +41,8 @@ gulp.task 'publish', ->
       rm -rf dist &&
       git add -A &&
       git commit -m 'auto publishing' &&
-      git push origin master
+      git push origin master &&
+      git checkout source
     """
   $.run(commands)
     .exec().on 'error', gutil.log
