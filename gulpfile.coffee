@@ -1,6 +1,6 @@
 gulp = require('gulp')
 $ = require('gulp-load-plugins')()
-runSequence = require('run-sequence')
+run_sequence = require('run-sequence')
 del = require('del')
 gutil = require('gutil')
 
@@ -20,7 +20,7 @@ gulp.task 'build-pages', ->
     .pipe gulp.dest('dist/')
 
 gulp.task 'build', (cb) ->
-  runSequence(
+  run_sequence(
     'clean'
     [ 'build-pages' ]
     # ['build-pages', 'build-scripts', 'build-styles']
@@ -39,4 +39,8 @@ gulp.task 'publish', ->
     .pipe gulp.dest './'
   # 4. commit and push
 
-gulp.task 'default', [ 'build', 'publish' ]
+gulp.task 'default', ->
+  run_sequence(
+    'build'
+    'publish'
+  )
