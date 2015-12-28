@@ -1,0 +1,25 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+.parallax-container {
+  height: 480px; }
+
+.parallax-container .section {
+  width: 100%; }
+
+.parallax img {
+  opacity: 0.6; }
+
+.yoru-section {
+  height: calc( 100vh - 64px ); }
+
+.mission-section {
+  height: 380px; }
+
+footer.page-footer {
+  padding: 0;
+  margin: 0; }
