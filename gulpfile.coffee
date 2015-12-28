@@ -44,7 +44,7 @@ gulp.task 'publish', ->
       git push origin master
     """
   $.run(commands)
-    .exec '', (err) -> throw err if err
+    .exec().on 'error', gutil.log
 
 gulp.task 'default', ->
   run_sequence(
