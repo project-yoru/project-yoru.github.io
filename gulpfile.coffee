@@ -28,6 +28,15 @@ gulp.task 'build', (cb) ->
   )
 
 gulp.task 'publish', ->
-  
+  # 0. manually checkout and push at `source` branch
+  # 1. checkout to master
+  $.git.checkout 'master', (err) -> throw err if err
+  # 2. fetch dist from `source`
+  $.git.checkout 'source', {args: '-- dist'}
+  # 3. mv files
+  gulp
+    .src './dist/**/*'
+    .pipe gulp.dest './'
+  # 4. commit and push
 
 gulp.task 'default', [ 'build', 'publish' ]

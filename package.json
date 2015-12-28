@@ -12,6 +12,7 @@
     "coffee-script": "^1.10.0",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
+    "gulp-git": "^1.6.0",
     "gulp-haml": "^0.1.6",
     "gulp-load-plugins": "^1.1.0",
     "gulp-ruby-haml": "0.0.7",
