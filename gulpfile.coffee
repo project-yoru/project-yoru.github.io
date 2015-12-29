@@ -1,4 +1,4 @@
-# TODO compress, gzip maybe?
+# TODO concat
 # TODO watch and browser sync
 
 gulp = require('gulp')
@@ -23,9 +23,17 @@ paths =
   fonts:
     src: [ 'src/fonts/**' ]
     dist: 'dist/fonts'
+  vendor:
+    src: [ 'src/vendor/**/*' ]
+    dist: 'dist/vendor'
 
 gulp.task 'clean', (cb) ->
   del [ 'dist/*' ], cb
+
+gulp.task 'copy-vendor', ->
+  gulp
+    .src paths.vendor.src
+    .pipe gulp.dest paths.vendor.dist
 
 gulp.task 'build-pages', ->
   # TODO vulcanize
@@ -62,14 +70,16 @@ gulp.task 'build-fonts', ->
 gulp.task 'build', (cb) ->
   run_sequence(
     'clean'
+    'copy-vendor'
     [ 'build-pages', 'build-images', 'build-scripts', 'build-styles', 'build-fonts' ]
+    # 'revision-assets'
     cb
   )
 
 gulp.task 'clean-up', (cb) ->
   del [ '.sass-cache' ], cb
 
-gulp.task 'publish', ->
+gulp.task 'publish-github', ->
   # 0. manually checkout and push at `source` branch
   # 1. checkout to master
   # 2. fetch dist from `source`
@@ -90,10 +100,17 @@ gulp.task 'publish', ->
   $.run(commands)
     .exec().on 'error', gutil.log
 
+gulp.task 'revision-assets', ->
+  rev_all = new ($.revAll)()
+  gulp.src('dist/**')
+    .pipe(rev_all.revision())
+    .pipe(gulp.dest('cdn'))
+
+
 gulp.task 'default', [ 'build' ]
 gulp.task 'deploy', ->
   run_sequence(
     'build'
     'clean-up'
-    'publish'
+    'publish-github'
   )
