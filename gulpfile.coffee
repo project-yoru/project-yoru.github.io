@@ -75,6 +75,7 @@ gulp.task 'publish', ->
   # 2. fetch dist from `source`
   # 3. mv files
   # 4. commit and push
+  # TODO sometimes wont update file
   commands =
     """
       git checkout master &&
