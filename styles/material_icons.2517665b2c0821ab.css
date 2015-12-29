@@ -2,8 +2,8 @@
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
-  src: url(http://7xpm8d.com2.z0.glb.qiniucdn.com/../fonts/material_icons/MaterialIcons-Regular.2b2781670b523882.eot);
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(http://7xpm8d.com2.z0.glb.qiniucdn.com/../fonts/material_icons/MaterialIcons-Regular.44cde46c68b273a7.woff2) format("woff2"), url(http://7xpm8d.com2.z0.glb.qiniucdn.com/../fonts/material_icons/MaterialIcons-Regular.59ade6045d899870.woff) format("woff"), url(http://7xpm8d.com2.z0.glb.qiniucdn.com/../fonts/material_icons/MaterialIcons-Regular.810c4d8de743b63e.ttf) format("truetype"); }
+  src: url(../fonts/material_icons/MaterialIcons-Regular.2b2781670b523882.eot);
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../fonts/material_icons/MaterialIcons-Regular.44cde46c68b273a7.woff2) format("woff2"), url(../fonts/material_icons/MaterialIcons-Regular.59ade6045d899870.woff) format("woff"), url(../fonts/material_icons/MaterialIcons-Regular.810c4d8de743b63e.ttf) format("truetype"); }
 .material-icons {
   font-family: "Material Icons";
   font-weight: normal;
