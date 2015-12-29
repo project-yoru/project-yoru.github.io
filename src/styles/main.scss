@@ -16,13 +16,15 @@
 
 .parallax {
   img {
-    opacity: .8
+    opacity: .8;
   }
 }
 
 .yoru-section {
   height: calc( 100vh - 64px );
-
+  h5.sub-title {
+    font-weight: 300;
+  }
 }
 
 .mission-section {
