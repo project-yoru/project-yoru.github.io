@@ -35,9 +35,10 @@ gulp.task 'build-pages', ->
     .pipe gulp.dest paths.pages.dist
 
 gulp.task 'build-images', ->
-  # TODO compress
   gulp
     .src paths.images.src
+    .pipe $.imagemin
+      progressive: true
     .pipe gulp.dest paths.images.dist
 
 gulp.task 'build-scripts', ->
