@@ -84,6 +84,10 @@ gulp.task 'revision-and-rename-assets', ->
     hashLength: 16
     dontRenameFile: [ '/index.html' ]
     transformPath: (rev, source, path) ->
+      # dont add prefix for fonts inside css files
+      if rev.match /^..\/font(s?)(.*)/
+        return rev
+
       cdn_prefix + rev
 
   gulp.src('tmp_dist/**')
@@ -111,11 +115,15 @@ gulp.task 'publish-github', ->
   $.run(commands)
     .exec().on 'error', gutil.log
 
-gulp.task 'default', [ 'build-to-tmp' ]
-gulp.task 'deploy', ->
+gulp.task 'default', ->
   run_sequence(
     'build-to-tmp'
     'revision-and-rename-assets'
     'clean-up'
+  )
+
+gulp.task 'deploy', ->
+  run_sequence(
+    'default'
     'publish-github'
   )
