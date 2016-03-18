@@ -1,3 +1,3 @@
 $ ->
-  $('.button-collapse').sideNav();
-  $('.parallax').parallax();
+  $('main.container').fullpage
+    sectionSelector: '.fullpage.section'

@@ -5,132 +5,62 @@
     %meta{name: 'viewport', content: "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"}
     %title project YORU
 
-    %link{:href => "styles/material_icons.css", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "vendor/materialize-0.97.5/css/materialize.min.css", :media => "screen,projection", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "vendor/fullpage.js/jquery.fullPage.css", :media => "screen,projection", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "styles/main.css", :media => "screen,projection", :rel => "stylesheet", :type => "text/css"}
   %body
-    %nav.white{:role => "navigation"}
-      .nav-wrapper.container
-        %a#logo-container.brand-logo.blue-grey-text.text-darken-1{href: '#'} YORU
+    -# %nav.white{:role => "navigation"}
+    -#   .nav-wrapper.container
+    -#     %a#logo-container.brand-logo.blue-grey-text.text-darken-1{href: '#'} YORU
 
-    .yoru-section.parallax-container.valign-wrapper
-      .section.no-pad-bot
-        .container
-          .row
-            .col.s8.offset-s4
-              %p.flow-text.center.white-text project YORU
-              .row.center
-                %h5.sub-title.col.s12.white-text
-                  夜
-          -# .row.center
-          -#   %a#download-button.btn-large.waves-effect.waves-light.teal.lighten-1{:href => "http://materializecss.com/getting-started.html"} Get Started
-      .parallax
-        -# %img{src: 'images/yoru.jpg', alt: 'photo by thomashawk on flickr: https://flic.kr/p/gSRbEz'}
-        %img{src: 'images/yoru-2.jpg', alt: 'photo by eznix on flickr: https://flic.kr/p/qrtqyF'}
-    .mission-section.valign-wrapper
-      .container
-        .section
-          .row.center
-            .col.s12
-              %p.flow-text.blue-grey-text.text-lighten-2 mission
-            .col.s12
-              %p.flow-text
-                Let craftsmen, tell stories, through games, to audience.
+    %main.container
+      .project-yoru.section.fullpage.center-align
+        %h4.light project YORU
+        .row
+          .col.s8.offset-s2
+            %p.flow-text Tools, resources, and communities to help creators build playable visual novels.
 
-    -# .container
-    -#   .section
-    -#     .row
-    -#       .col.s12.m4
-    -#         .icon-block
-    -#           %h2.center.brown-text
-    -#             %i.material-icons flash_on
-    -#           %h5.center Speeds up development
-    -#           %p.light We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.
-    -#       .col.s12.m4
-    -#         .icon-block
-    -#           %h2.center.brown-text
-    -#             %i.material-icons group
-    -#           %h5.center User Experience Focused
-    -#           %p.light By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.
-    -#       .col.s12.m4
-    -#         .icon-block
-    -#           %h2.center.brown-text
-    -#             %i.material-icons settings
-    -#           %h5.center Easy to work with
-    -#           %p.light We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.
+      .aurora.section.fullpage.center-align
+        %h4.light workshop Aurora
+        .row
+        .row
+        .row
+          .col.s8.offset-s2
+            %a{href: 'http://aurora.project-yoru.com', target: '_blank'}
+              %img{src: 'images/aurora_logo_with_brand.png', width: '256px'}
+            %p.flow-text
+              %a{href: 'http://aurora.project-yoru.com', target: '_blank'}
+                Workshop aurora
+              is the main engine and generator, helps you build a playable visual novel
 
-    .aurora-section.parallax-container.valign-wrapper
-      .section.no-pad-bot
-        .container
-          %p.flow-text.center.blue-grey-text.text-darken-3 aorura
-          .row.center
-            %h5.col.s12.blue-grey-text.text-darken-3
-              Generate multi-platform game from just github repo.
-      .parallax
-        %img{src: 'images/aurora.jpg', alt: 'photo by alicepopkorn on flickr: https://flic.kr/p/aH6GJr'}
-
-    .echo-section.parallax-container.valign-wrapper
-      .section.no-pad-bot
-        .container
-          %p.flow-text.center.white-text echo
-          .row.center
-            %h5.col.s12.white-text
-              Portray and fork, worlds and stories.
-      .parallax
-        %img{src: 'images/echo.jpg', alt: 'photo by infomastern on flickr: https://www.flickr.com/photos/infomastern/12817357173/in/photolist-kwCiJM-b6uP6e-ATi2At-ruJQQ-dNQFtC-2WnWMv-7XAn3k-pVkpHh-oF4Q25-eSXQgQ-qaZo2i-5VBsNJ-pkXxFj-8K64MN-9Vt7Lw-gpKE8o-kVkm8c-22XWts-cNP6CC-fQoDPA-iqtEno-4FnszP-fwPtCo-m2aSi4-ijjtA-ajKFN1-82hQpU-sbR3y8-aeyhWK-6pxCod-dwXc5m-7grjer-8rZoL8-avpR8D-nk8EYh-csoqc-pCeniN-kXK8Qz-a1rf3r-dgcMj-9Ftoon-tYUqAv-73QdMF-9oSyTd-59n7Uh-opHmqf-qdMb1g-fhocB9-kmh9aC-qMYjh1'}
-
-    .galaxy-section.parallax-container.valign-wrapper
-      .section.no-pad-bot
-        .container
-          %p.flow-text.center.white-text galaxy
-          .row.center
-            %h5.col.s12.white-text
-              Draw figures for characters.
-      .parallax
-        %img{src: 'images/galaxy.jpg', alt: 'photo by ninfaj on flickr: https://flic.kr/p/ADFgKE'}
-
-    -# .container
-    -#   .section
-    -#     .row
-    -#       .col.s12.center
-    -#         %h3
-    -#           %i.mdi-content-send.brown-text
-    -#         %h4 Contact Us
-    -#         %p.left-align.light Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-
-    %footer.page-footer.grey.lighten-1
-      -# .container
-        -# .row
-          -# .col.l6.s12
-          -#   %h5.white-text Company Bio
-          -#   %p.grey-text.text-lighten-4 We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.
-          -# .col.l3.s12
-          -#   %h5.white-text Settings
-          -#   %ul
-          -#     %li
-          -#       %a.white-text{:href => "#!"} Link 1
-          -#     %li
-          -#       %a.white-text{:href => "#!"} Link 2
-          -#     %li
-          -#       %a.white-text{:href => "#!"} Link 3
-          -#     %li
-          -#       %a.white-text{:href => "#!"} Link 4
-          -# .col.l3.s12
-          -#   %h5.white-text Connect
-          -#   %ul
-          -#     %li
-          -#       %a.white-text{:href => "#!"} Link 1
-          -#     %li
-          -#       %a.white-text{:href => "#!"} Link 2
-          -#     %li
-          -#       %a.white-text{:href => "#!"} Link 3
-          -#     %li
-          -#       %a.white-text{:href => "#!"} Link 4
-      .footer-copyright.grey.lighten-1
-        .container
-          project YORU
+      .coming-next.section.fullpage.center-align
+        %h4.light Under developing...
+        .row
+        .row
+        .row
+          .col.s4.offset-s2.right-align
+            %p.flow-text
+              workshop
+              %strong Firefly
+          .col.s4
+            %p.flow-text Character figures generator
+        .row
+          .col.s4.offset-s2.right-align
+            %p.flow-text
+              store
+              %strong Galaxy
+          .col.s4
+            %p.flow-text Assets publishing
+        .row
+          .col.s4.offset-s2.right-align
+            %p.flow-text
+              community
+              %strong Echo
+          .col.s4
+            %p.flow-text Portray and fork, worlds and stories
 
     / Scripts
     %script{src: "vendor/jquery-2.1.4/jquery.min.js"}
     %script{src: "vendor/materialize-0.97.5/js/materialize.min.js"}
+    %script{src: "vendor/fullpage.js/jquery.fullPage.js"}
     %script{src: "scripts/main.js"}
